@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wordle Disability - <%= type %></title>
+    <link rel="stylesheet" href="css/worlde.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Wordle <%= type %></h1>
+        <div class="board">
+            <% for(let i = 0; i < tries; i++){ %>
+                <div class="row" id="id<%= i %>">
+                    <% solution.split("").forEach(letter => { %>
+                        <div class="cell"></div>
+                    <% }) %>
+                </div>
+            <% } %>
+            
+        </div>
+        <input type="text" id="guessInput" maxlength="<%= solution.length %>" placeholder="Type your guess" autofocus>
+        <button id="submitButton" onclick="checkGuess('<%= solution %>', <%= tries %>)">Submit Guess</button>
+        <button id="retryButton" onclick="window.location.reload();" hidden>Retry</button>
+    </div>
+
+    <script src="js/wordle.js"></script>
+</body>
+</html>
