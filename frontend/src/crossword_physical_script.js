@@ -1,3 +1,5 @@
+import { waitFor } from "@testing-library/react";
+
 // Grid definitions
 const values = [
     "bbbbbbbbbbbwbbbbbbb", "bbbbbbbbbbbwwwwwwww", "bbbbbbbbbbbwbbbbbbb",
@@ -22,6 +24,7 @@ const total_rows = values.length;
 const total_cols = values[0].length;
 
 function createFrameBoxes() {
+    waitFor(1);
     let boxes = "";
     for (let i = 0; i < values.length; i++) {
         boxes += "<tr>";

@@ -130,3 +130,5 @@ function color_clear() {
     red = [];
     green = [];
 }
+
+createFrameBoxes();
